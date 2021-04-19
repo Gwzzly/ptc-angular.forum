@@ -15,10 +15,17 @@ export class ThreadService{
     }
 
     getThreadList(): Promise<Thread[]> {
-        return this.httpClient.get(this.urlRest + 'threads')
+        return this.httpClient.get(this.urlRest + 'threads/all')
             .toPromise()
             .then((data: any[]) => {
                 return this.jsonConvert.deserializeArray(data, Thread);
             });
+    }
+
+    getThreadById(id: number): Promise<Thread>{
+        return this.httpClient.get(this.urlRest + 'threads/' + id)
+        .toPromise().then((data: any) => {
+            return this.jsonConvert.deserializeObject(data, Thread);
+        });
     }
 }

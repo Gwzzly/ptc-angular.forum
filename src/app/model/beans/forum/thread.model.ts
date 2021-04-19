@@ -23,9 +23,9 @@ export class Thread {
     @JsonProperty('supThread', Thread)
     public supThread: Thread = null;
 
-    @JsonProperty('subThreadList', [Thread])
+    @JsonProperty('subThreadList', [Thread], true)
     public subThreadList: Thread[] = [];
 
-    @JsonProperty('messageList', [Message])
+    @JsonProperty('messageList', [Message], true)
     public messageList: Message[] = [];
 }

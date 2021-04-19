@@ -6,6 +6,10 @@ const routes: Routes = [
     {
         path: 'thread',
         component: ThreadComponent
+    },
+    {
+        path: 'thread/:id',
+        component: ThreadComponent
     }
 ];
 

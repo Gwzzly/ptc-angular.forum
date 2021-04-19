@@ -1,4 +1,8 @@
+<button *ngIf="!!thread" (click)="goToParentThread()">Remonter</button>
+
 <div *ngFor="let thread of threads">
+    
+
     <app-sub-thread [subThread]="thread"></app-sub-thread>
 </div>
 
